@@ -18,9 +18,8 @@ A Python script, that searches the new post of a specific Instagram Account and 
 5. Create a .env file and add the following lines:
 INSTAGRAM_USERNAME='THE_USERNAME_OF_YOUR_INSTAGRAM_ACCOUNT'
 INSTAGRAM_PASSWORD='THE_PASSWORD_OF_YOUR_INSTAGRAM_ACCOUNT'
-USER_TO_SCRAPE='THE_USERNAME_OF_THE_INSTAGRAM_ACCOUNT_YOU_WANT_TO_SCRAPE'
 DISCORD_TOKEN='THE DISCORD BOT TOKEN'
-6. Add the Channel ID of the Discord Channel you want to post the Instagram Posts to the script. Line 50. (channel = client.get_channel(CHANNEL_ID)) (How to get the Channel ID)[https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-] (For some reason, the Channel ID does not work in the .env file)
-7. Run the script
+1. Add the Channel ID of the Discord Channel you want to post the Instagram Posts to the script. Line 63. (channel = client.get_channel(CHANNEL_ID)) (How to get the Channel ID)[https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-] (For some reason, the Channel ID does not work in the .env file)
+2. Run the script
 
 Feel free to report any bugs or issues.
