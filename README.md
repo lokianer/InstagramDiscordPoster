@@ -8,7 +8,7 @@ A Python script, that searches the new post of a specific Instagram Account and 
 - python-dotenv
 - A Discord Bot Token
 - An Instagram Account
-- The old_url.txt file is needed for the script to work. It has to be in the same directory as the script. It cannot be empty, that is why I added a String.
+- The old_post.json file is needed for the script to work. It has to be in the same directory as the script. Modify the file to your needs.
 
 ## Installation
 1. Install Python 3.10 or higher
