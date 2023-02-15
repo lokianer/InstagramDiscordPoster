@@ -4,6 +4,7 @@ from discord.ext import tasks
 import os
 import json
 from dotenv import load_dotenv
+import asyncio
 
 load_dotenv()
 bot = instaloader.Instaloader()
@@ -30,7 +31,7 @@ class MyClient(discord.Client):
     @tasks.loop(seconds=300)
     async def check_for_new_post(self):
         # You can add more accounts to the list if you want
-        accounts = ['Name1', 'Name2', 'Name3']
+        accounts = ['name1', 'name2', 'name3']
         print('checking for new posts')
 
         for account in accounts:
@@ -73,6 +74,8 @@ class MyClient(discord.Client):
                 await channel.send(embed=embed)
             else:
                 print(f'no new post for {account}')
+            await asyncio.sleep(300)
+            
     # This function will be called before the loop starts
     # Just a security measure to make sure the bot is ready before the loop starts
     @check_for_new_post.before_loop
