@@ -45,6 +45,7 @@ class MyClient(discord.Client):
             post_details['hashtags'] = post.caption_hashtags
             post_details['media'] = post.url
             post_details['shortcode'] = post.shortcode
+            post_details['date'] = post.date
 
             # You can modify this part if you want to use a database instead of a file, but I think it's easier to use a file
             try:
@@ -71,6 +72,7 @@ class MyClient(discord.Client):
                 embed.set_author(name='Link to Post', url="https://instagram.com/p/"+the_posts['shortcode'])
                 embed.set_thumbnail(url="https://allfacebook.de/wp-content/uploads/2020/02/ig-logo-normal.png")
                 embed.set_image(url=the_posts['media'])
+                embed.add_field(name="date", value=the_posts['date'], inline=True)
                 await channel.send(embed=embed)
             else:
                 print(f'no new post for {account}')
