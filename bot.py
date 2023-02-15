@@ -5,6 +5,7 @@ import os
 import json
 from dotenv import load_dotenv
 import asyncio
+from datetime import datetime
 
 load_dotenv()
 bot = instaloader.Instaloader()
@@ -45,7 +46,7 @@ class MyClient(discord.Client):
             post_details['hashtags'] = post.caption_hashtags
             post_details['media'] = post.url
             post_details['shortcode'] = post.shortcode
-            post_details['date'] = post.date
+            post_details['date'] = post.date.strftime("%d.%m.%Y %H:%M:%S")
 
             # You can modify this part if you want to use a database instead of a file, but I think it's easier to use a file
             try:
@@ -54,8 +55,8 @@ class MyClient(discord.Client):
             except:
                 old_posts = {}
             
-            if old_posts.get(account, {}).get('media', None) != post_details['media']: 
-                old_posts[account]['media'] = post_details['media']
+            if old_posts.get(account, {}).get('date', None) != post_details['date']: 
+                old_posts[account]['date'] = post_details['date']
                 with open('old_posts.json', 'w') as f:
                     json.dump(old_posts, f)
 

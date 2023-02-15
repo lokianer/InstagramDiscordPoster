@@ -1,8 +1,1 @@
-{
-  "Name1": {
-    "media": ""  },
-  "Name2": {
-    "media": ""  },
-  "Name3": {
-    "media": ""  }
-}
+{"name1": {"date": ""}, "name2": {"date": ""}, "name3": {"date": ""}}
