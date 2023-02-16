@@ -48,7 +48,6 @@ class MyClient(discord.Client):
             post_details['date'] = post.date.strftime("%d.%m.%Y %H:%M:%S")
             if post.mediacount > 0:
                 post_details['media'] = list(post.get_sidecar_nodes())[0].display_url
-            print(post_details['media'])
 
             # You can modify this part if you want to use a database instead of a file, but I think it's easier to use a file
             try:
