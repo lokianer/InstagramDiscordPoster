@@ -44,9 +44,11 @@ class MyClient(discord.Client):
             post_details['username'] = post.owner_username
             post_details['caption'] = post.caption
             post_details['hashtags'] = post.caption_hashtags
-            post_details['media'] = post.url
             post_details['shortcode'] = post.shortcode
             post_details['date'] = post.date.strftime("%d.%m.%Y %H:%M:%S")
+            if post.mediacount > 0:
+                post_details['media'] = list(post.get_sidecar_nodes())[0].display_url
+            print(post_details['media'])
 
             # You can modify this part if you want to use a database instead of a file, but I think it's easier to use a file
             try:
@@ -60,7 +62,8 @@ class MyClient(discord.Client):
                 with open('old_posts.json', 'w') as f:
                     json.dump(old_posts, f)
 
-                the_posts = post_details
+                the_posts = post_details                   
+                            
                 print(f'new post for {account}')
                 # You can change the channel id to the channel you want
                 channel = client.get_channel()
